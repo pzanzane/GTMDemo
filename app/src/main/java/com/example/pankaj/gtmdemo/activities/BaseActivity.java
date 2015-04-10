@@ -32,6 +32,17 @@ public class BaseActivity extends ActionBarActivity {
             e.printStackTrace();
         }
     }
+
+    protected void eventPushAdword(ComponentName componentName){
+        PackageManager packageManager = getPackageManager();
+        try {
+            ActivityInfo info = packageManager.getActivityInfo(componentName, 0);
+
+            mGoogleTagsManager.pushEvent(this, "fireRemarketing", "screenName", info.name);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
