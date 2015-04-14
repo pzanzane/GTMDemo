@@ -36,7 +36,9 @@ public class VanDieselActivity extends BaseActivity implements View.OnClickListe
      */
     @Override
     public void onClick(View v) {
+
             Intent intent = new Intent(this,PaulWalkerActivity.class);
             startActivity(intent);
+
     }
 }
